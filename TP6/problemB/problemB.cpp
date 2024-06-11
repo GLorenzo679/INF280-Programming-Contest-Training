@@ -27,14 +27,14 @@ int main() {
         return 0;
     }
 
-    for (int i = 0; i < S; ++i) {
+    for (int i = 0; i < S; i++) {
         countS[charToIndex(s[i])]++;
         countT[charToIndex(t[i])]++;
     }
 
     if (countS == countT) K++;
 
-    for (int i = S; i < T; ++i) {
+    for (int i = S; i < T; i++) {
         countT[charToIndex(t[i])]++;
         countT[charToIndex(t[i - S])]--;
 
