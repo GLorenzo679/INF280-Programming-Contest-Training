@@ -25,8 +25,6 @@ vector<int> dijkstra(int start, const vector<vector<Edge>>& graph) {
         auto [current_dist, u] = pq.top();
         pq.pop();
 
-        cout << "current_dist: " << current_dist << " u: " << u << endl;
-
         if (current_dist > dist[u]) continue;
 
         for (const auto& edge : graph[u]) {
@@ -35,8 +33,6 @@ vector<int> dijkstra(int start, const vector<vector<Edge>>& graph) {
             if (dist[u] + cost < dist[v]) {
                 dist[v] = dist[u] + cost;
                 pq.push({dist[v], v});
-
-                cout << "dist[" << v << "]: " << dist[v] << endl;
             }
         }
     }
